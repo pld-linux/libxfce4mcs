@@ -3,7 +3,7 @@ Summary(pl):	Obs³uga zarz±dzania ustawieniami wielokana³owymi dla Xfce
 Name:		libxfce4mcs
 Version:	4.1.99.3
 Release:	1
-License:	LGPL
+License:	GPL v2
 Group:		Libraries
 Source0:	ftp://ftp.berlios.de/pub/xfce-goodies/%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	11b9c2d4f1107f8d562dfaadd46ec345
@@ -14,7 +14,6 @@ BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	libxfce4util-devel >= 4.1.13
 BuildRequires:	pkgconfig >= 1:0.9.0
-Requires:	libxfce4util >= 4.1.13
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
