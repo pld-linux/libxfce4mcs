@@ -8,13 +8,12 @@ Group:		Libraries
 Source0:	ftp://ftp.berlios.de/pub/xfce-goodies/%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	7f9823b4e73788bc428031deae022160
 URL:		http://www.xfce.org/
-BuildRequires:	X11-devel
-BuildRequires:	autoconf
+BuildRequires:	XFree86-devel
+BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	libxfce4util-devel >= 4.1.13
 BuildRequires:	pkgconfig >= 0.9.0
-Requires:	gtk-doc-common
 Requires:	libxfce4util >= 4.1.13
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -28,8 +27,9 @@ Obs³uga zarz±dzania ustawieniami wielokana³owymi dla XFce.
 Summary:	Development files for libxfce4mcs libraries
 Summary(pl):	Pliki nag³ówkowe bibliotek libxfce4mcs
 Group:		Development/Libraries
-Requires:	X11-devel
 Requires:	%{name} = %{version}-%{release}
+Requires:	XFree86-devel
+Requires:	gtk-doc-common
 Requires:	libxfce4util-devel >= 4.1.13
 
 %description devel
@@ -79,7 +79,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
-%{_gtkdocdir}/libxfce4mcs
 
 %files devel
 %defattr(644,root,root,755)
@@ -87,6 +86,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/lib*.la
 %{_includedir}/xfce4/libxfce4mcs
 %{_pkgconfigdir}/*.pc
+%{_gtkdocdir}/libxfce4mcs
 
 %files static
 %defattr(644,root,root,755)
