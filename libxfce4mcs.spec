@@ -1,12 +1,15 @@
+
+%define		_snap 20040806
+
 Summary:	Multi-channel settings management support for XFce
 Summary(pl):	Obs³uga zarz±dzania ustawieniami wielokana³owymi dla XFce
 Name:		libxfce4mcs
-Version:	4.1.2
-Release:	1
+Version:	4.2.0
+Release:	0.%{_snap}.1
 License:	LGPL
 Group:		Libraries
-Source0:	http://lo1sanok.eu.org/~troll/PLD/xfce4/%{name}-%{version}.tar.bz2
-# Source0-md5:	698840fcee4d831b9129411443b1b61e
+Source0:	http://ep09.pld-linux.org/~havner/xfce4/%{name}-%{_snap}.tar.bz2
+# Source0-md5:	fd320eef36fe2ba11b75ce906b1fc34d
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -48,7 +51,7 @@ Static libxfce4mcs libraries.
 Statyczne biblioteki libxfce4mcs.
 
 %prep
-%setup -q
+%setup -q -n %{name}
 
 %build
 %{__libtoolize}
