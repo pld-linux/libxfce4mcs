@@ -1,5 +1,5 @@
-Summary:	Multi-channel settings management support for XFce
-Summary(pl):	Obs³uga zarz±dzania ustawieniami wielokana³owymi dla XFce
+Summary:	Multi-channel settings management support for Xfce
+Summary(pl):	Obs³uga zarz±dzania ustawieniami wielokana³owymi dla Xfce
 Name:		libxfce4mcs
 Version:	4.1.99.2
 Release:	1
@@ -18,10 +18,10 @@ Requires:	libxfce4util >= 4.1.13
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-multi-channel settings management support for XFce.
+multi-channel settings management support for Xfce.
 
 %description -l pl
-Obs³uga zarz±dzania ustawieniami wielokana³owymi dla XFce.
+Obs³uga zarz±dzania ustawieniami wielokana³owymi dla Xfce.
 
 %package devel
 Summary:	Development files for libxfce4mcs libraries
