@@ -12,9 +12,9 @@ BuildRequires:	XFree86-devel
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	libtool
-BuildRequires:	libxfce4util-devel >= 4.1.13
+BuildRequires:	libxfce4util-devel >= 4.2.0
 BuildRequires:	pkgconfig >= 1:0.9.0
-Requires:	libxfce4util >= 4.1.13
+Requires:	libxfce4util >= 4.2.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -30,7 +30,7 @@ Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	XFree86-devel
 Requires:	gtk-doc-common
-Requires:	libxfce4util-devel >= 4.1.13
+Requires:	libxfce4util-devel >= 4.2.0
 
 %description devel
 Development files for the libxfce4mcs libraries.
