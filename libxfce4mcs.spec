@@ -24,7 +24,7 @@ Summary:	Development files for libxfce4mcs libraries
 Summary(pl):	Pliki nag³ówkowe bibliotek libxfce4mcs
 Group:		Development/Libraries
 Requires:	%{name} = %{version}
-Requires:	libxfce4util-devel
+Requires:	libxfce4util-devel >= 4.0.0
 
 %description devel
 Development files for the libxfce4mcs libraries.
