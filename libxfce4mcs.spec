@@ -8,9 +8,9 @@ Group:		Libraries
 Source0:	http://www.xfce.org/archive/xfce4-rc3/src/%{name}-%{version}.tar.gz
 # Source0-md5:	a7de8eeb533fd64ef31b280bda6ea8ac
 URL:		http://www.xfce.org/
-BuildRequires:	libxfce4util-devel >= 3.99.2
+BuildRequires:	libxfce4util-devel >= 3.99.3
 BuildRequires:	pkgconfig >= 0.9.0
-Requires:	libxfce4util >= 3.99.2
+Requires:	libxfce4util >= 3.99.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
