@@ -9,6 +9,7 @@ Source0: 	http://dl.sourceforge.net/xfce/%{name}-%{version}.tar.gz
 # Source0-md5:	3efa99233d3c221cdb7465c89b2c2211
 URL: 		http://www.xfce.org/
 BuildRequires: 	libxfce4util-devel >= 3.90.0
+BuildRequires:	pkgconfig >= 0.9.0
 Requires:	libxfce4util >= 3.90.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
