@@ -1,22 +1,19 @@
-#
-%define		snap 20040616
-#
 Summary:	Multi-channel settings management support for XFce
 Summary(pl):	Obs³uga zarz±dzania ustawieniami wielokana³owymi dla XFce
 Name:		libxfce4mcs
-Version:	4.1.0
-Release:	0.%{snap}.1
+Version:	4.1.2
+Release:	1
 License:	LGPL
 Group:		Libraries
-Source0:	%{name}-snap-%{snap}.tar.bz2
-# Source0-md5:	69721946e896fcb1ca1b88384048d107
+Source0:	http://lo1sanok.eu.org/~troll/PLD/xfce4/%{name}-%{version}.tar.bz2
+# Source0-md5:	698840fcee4d831b9129411443b1b61e
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
-BuildRequires:	libxfce4util-devel >= %{version}
+BuildRequires:	libxfce4util-devel >= 4.1.0
 BuildRequires:	pkgconfig >= 0.9.0
-Requires:	libxfce4util >= %{version}
+Requires:	libxfce4util >= 4.1.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -30,7 +27,7 @@ Summary:	Development files for libxfce4mcs libraries
 Summary(pl):	Pliki nag³ówkowe bibliotek libxfce4mcs
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	libxfce4util-devel >= %{version}
+Requires:	libxfce4util-devel >= 4.1.0
 
 %description devel
 Development files for the libxfce4mcs libraries.
@@ -51,7 +48,7 @@ Static libxfce4mcs libraries.
 Statyczne biblioteki libxfce4mcs.
 
 %prep
-%setup -q -n %{name}
+%setup -q
 
 %build
 %{__libtoolize}
