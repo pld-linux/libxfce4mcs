@@ -2,8 +2,8 @@ Summary:	Multi-channel settings management support for Xfce
 Summary(pl):	Obs³uga zarz±dzania ustawieniami wielokana³owymi dla Xfce
 Name:		libxfce4mcs
 Version:	4.1.99.3
-Release:	1
-License:	GPL v2
+Release:	2
+License:	LGPL v2
 Group:		Libraries
 Source0:	ftp://ftp.berlios.de/pub/xfce-goodies/%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	11b9c2d4f1107f8d562dfaadd46ec345
