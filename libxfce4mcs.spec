@@ -41,7 +41,7 @@ Pliki nag³ówkowe bibliotek libxfce4mcs.
 %package static
 Summary:	Static libxfce4mcs libraries
 Summary(pl):	Statyczne biblioteki libxfce4mcs
-Group:		Development/Libriaries
+Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
