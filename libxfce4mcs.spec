@@ -1,19 +1,21 @@
 Summary:	Multi-channel settings management support for XFce
 Summary(pl):	Obs³uga zarz±dzania ustawieniami wielokana³owymi dla XFce
 Name:		libxfce4mcs
-Version:	4.0.6
-Release:	2
+Version:	4.1.99.1
+Release:	1
 License:	LGPL
 Group:		Libraries
-#Source0:	ftp://ftp.berlios.de/pub/xfce-goodies/%{version}/%{name}-%{version}.tar.gz
-Source0:	http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-%{version}/src/%{name}-%{version}.tar.gz
-# Source0-md5:	ebbe2f4934d79c596d2a48c0cbf6ed33
+Source0:	ftp://ftp.berlios.de/pub/xfce-goodies/%{version}/%{name}-%{version}.tar.gz
+# Source0-md5:	7f9823b4e73788bc428031deae022160
 URL:		http://www.xfce.org/
-BuildRequires:	XFree86-devel
+BuildRequires:	X11-devel
+BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libxfce4util-devel >= %{version}
+BuildRequires:	libtool
+BuildRequires:	libxfce4util-devel >= 4.1.13
 BuildRequires:	pkgconfig >= 0.9.0
-Requires:	libxfce4util >= %{version}
+Requires:	gtk-doc-common
+Requires:	libxfce4util >= 4.1.13
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -26,9 +28,9 @@ Obs³uga zarz±dzania ustawieniami wielokana³owymi dla XFce.
 Summary:	Development files for libxfce4mcs libraries
 Summary(pl):	Pliki nag³ówkowe bibliotek libxfce4mcs
 Group:		Development/Libraries
+Requires:	X11-devel
 Requires:	%{name} = %{version}-%{release}
-Requires:	XFree86-devel
-Requires:	libxfce4util-devel >= %{version}
+Requires:	libxfce4util-devel >= 4.1.13
 
 %description devel
 Development files for the libxfce4mcs libraries.
@@ -52,14 +54,20 @@ Statyczne biblioteki libxfce4mcs.
 %setup -q
 
 %build
-cp /usr/share/automake/config.sub .
-%configure
+%{__libtoolize}
+%{__aclocal} -I m4
+%{__autoheader}
+%{__automake}
+%{__autoconf}
+%configure \
+	--with-html-dir=%{_gtkdocdir}
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -71,6 +79,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
+%{_gtkdocdir}/libxfce4mcs
 
 %files devel
 %defattr(644,root,root,755)
