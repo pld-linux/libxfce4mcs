@@ -8,6 +8,7 @@ Group:		Libraries
 Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.gz
 # Source0-md5:	88537fa5c9cfe665d639f2670e1d4b6c
 URL:		http://www.xfce.org/
+BuildRequires:	automake
 BuildRequires:	libxfce4util-devel >= %{version}
 BuildRequires:	pkgconfig >= 0.9.0
 Requires:	libxfce4util >= %{version}
@@ -48,6 +49,7 @@ Statyczne biblioteki libxfce4mcs.
 %setup -q
 
 %build
+cp /usr/share/automake/config.sub .
 %configure
 %{__make}
 
