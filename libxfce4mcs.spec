@@ -1,5 +1,5 @@
 
-%define		_snap 20040813
+%define		_snap 20040816
 
 Summary:	Multi-channel settings management support for XFce
 Summary(pl):	Obs³uga zarz±dzania ustawieniami wielokana³owymi dla XFce
@@ -9,7 +9,7 @@ Release:	0.%{_snap}.1
 License:	LGPL
 Group:		Libraries
 Source0:	http://ep09.pld-linux.org/~havner/xfce4/%{name}-%{_snap}.tar.bz2
-# Source0-md5:	8b12c205037984110a278532d7b09cd2
+# Source0-md5:	6d3e7f1432bd42eafa95e9cc1a4be762
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
