@@ -1,15 +1,19 @@
+#
+%define		snap 20040616
+#
 Summary:	Multi-channel settings management support for XFce
 Summary(pl):	Obs³uga zarz±dzania ustawieniami wielokana³owymi dla XFce
 Name:		libxfce4mcs
-Version:	4.0.5
-Release:	1
+Version:	4.1.0
+Release:	0.%{snap}.1
 License:	LGPL
 Group:		Libraries
-#Source0:	ftp://ftp.berlios.de/pub/xfce-goodies/%{version}/%{name}-%{version}.tar.gz
-Source0:	http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-%{version}/src/%{name}-%{version}.tar.gz
-# Source0-md5:	a8d19a7d754f6800eb73e4e22c91424d
+Source0:	%{name}-snap-%{snap}.tar.bz2
+# Source0-md5:	69721946e896fcb1ca1b88384048d107
 URL:		http://www.xfce.org/
+BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	libtool
 BuildRequires:	libxfce4util-devel >= %{version}
 BuildRequires:	pkgconfig >= 0.9.0
 Requires:	libxfce4util >= %{version}
@@ -47,17 +51,22 @@ Static libxfce4mcs libraries.
 Statyczne biblioteki libxfce4mcs.
 
 %prep
-%setup -q
+%setup -q -n %{name}
 
 %build
-cp /usr/share/automake/config.sub .
+%{__libtoolize}
+%{__aclocal} -I m4
+%{__autoheader}
+%{__automake}
+%{__autoconf}
 %configure
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
