@@ -14,6 +14,7 @@ BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	libxfce4util-devel >= %{version}
 BuildRequires:	pkgconfig >= 1:0.9.0
+BuildRequires:	xfce4-dev-tools
 Requires:	libxfce4util >= %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -55,9 +56,9 @@ Statyczne biblioteki libxfce4mcs.
 
 %build
 %{__libtoolize}
-#%{__aclocal} -I m4
+%{__aclocal} -I %{_datadir}/xfce4/dev-tools/m4macros
 %{__autoheader}
-#%{__automake}
+%{__automake}
 %{__autoconf}
 %configure \
 	--with-html-dir=%{_gtkdocdir}
