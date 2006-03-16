@@ -8,7 +8,6 @@ Group:		Libraries
 Source0:        http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-%{version}/src/%{name}-%{version}.tar.gz
 # Source0-md5:	b3244024bea7f5756f4c0f541bc24128
 URL:		http://www.xfce.org/
-BuildRequires:	XFree86-devel
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	gtk-doc-automake
@@ -17,6 +16,7 @@ BuildRequires:	libxfce4util-devel >= %{version}
 BuildRequires:	pkgconfig >= 1:0.9.0
 BuildRequires:	rpmbuild(macros) >= 1.98
 BuildRequires:	xfce4-dev-tools
+BuildRequires:	xorg-lib-libX11-devel
 Requires:	libxfce4util >= %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -31,9 +31,9 @@ Summary:	Development files for libxfce4mcs libraries
 Summary(pl):	Pliki nag³ówkowe bibliotek libxfce4mcs
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	XFree86-devel
 Requires:	gtk-doc-common
 Requires:	libxfce4util-devel >= %{version}
+Requires:	xorg-lib-libX11-devel
 
 %description devel
 Development files for the libxfce4mcs libraries.
