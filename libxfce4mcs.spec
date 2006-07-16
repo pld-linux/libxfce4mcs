@@ -1,12 +1,12 @@
 Summary:	Multi-channel settings management support for Xfce
 Summary(pl):	Obs³uga zarz±dzania ustawieniami wielokana³owymi dla Xfce
 Name:		libxfce4mcs
-Version:	4.3.90.1
+Version:	4.3.90.2
 Release:	1
 License:	LGPL v2
 Group:		Libraries
 Source0:        http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	ce5f95e11e73e56ae0d0fe991a4f0b1b
+# Source0-md5:	71c8280e256882563f57a273b8a5184a
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -15,7 +15,7 @@ BuildRequires:	libtool
 BuildRequires:	libxfce4util-devel >= %{version}
 BuildRequires:	pkgconfig >= 1:0.9.0
 BuildRequires:	rpmbuild(macros) >= 1.98
-BuildRequires:	xfce4-dev-tools
+BuildRequires:	xfce4-dev-tools >= 4.3.90.2
 BuildRequires:	xorg-lib-libX11-devel
 Requires:	libxfce4util >= %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -58,10 +58,11 @@ Statyczne biblioteki libxfce4mcs.
 
 %build
 %{__libtoolize}
-%{__aclocal} -I %{_datadir}/xfce4/dev-tools/m4macros
+%{__aclocal}
 %{__autoheader}
 %{__automake}
 %{__autoconf}
+LDFLAGS="%{rpmldflags} -Wl,--as-needed"
 %configure \
 	--with-html-dir=%{_gtkdocdir}
 %{__make}
