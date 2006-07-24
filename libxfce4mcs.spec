@@ -2,7 +2,7 @@ Summary:	Multi-channel settings management support for Xfce
 Summary(pl):	Obs³uga zarz±dzania ustawieniami wielokana³owymi dla Xfce
 Name:		libxfce4mcs
 Version:	4.3.90.2
-Release:	1
+Release:	2
 License:	LGPL v2
 Group:		Libraries
 Source0:        http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
@@ -62,7 +62,6 @@ Statyczne biblioteki libxfce4mcs.
 %{__autoheader}
 %{__automake}
 %{__autoconf}
-LDFLAGS="%{rpmldflags} -Wl,--as-needed"
 %configure \
 	--with-html-dir=%{_gtkdocdir}
 %{__make}
