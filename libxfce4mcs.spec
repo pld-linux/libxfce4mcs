@@ -34,6 +34,7 @@ Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	gtk-doc-common
 Requires:	libxfce4util-devel >= %{version}
+Requires:	startup-notification-devel >= 0.8
 Requires:	xorg-lib-libX11-devel
 
 %description devel
