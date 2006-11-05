@@ -1,12 +1,16 @@
+#
+# Conditional build:
+%bcond_without	static_libs	# don't build static library
+#
 Summary:	Multi-channel settings management support for Xfce
 Summary(pl):	Obs³uga zarz±dzania ustawieniami wielokana³owymi dla Xfce
 Name:		libxfce4mcs
-Version:	4.3.99.1
+Version:	4.3.99.2
 Release:	1
 License:	LGPL v2
 Group:		Libraries
 Source0:        http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	ad70646a4ef699d7adcd409339f78884
+# Source0-md5:	7ee4eab238e773b9dbf3fa1472643f6e
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -65,7 +69,8 @@ Statyczne biblioteki libxfce4mcs.
 %{__automake}
 %{__autoconf}
 %configure \
-	--with-html-dir=%{_gtkdocdir}
+	--with-html-dir=%{_gtkdocdir} \
+	--%{?with_static_libs:en}%{!?with_static_libs:dis}able-static
 %{__make}
 
 %install
@@ -82,7 +87,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog README
+%doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 
 %files devel
@@ -93,6 +98,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_pkgconfigdir}/*.pc
 #%{_gtkdocdir}/libxfce4mcs
 
+%if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/lib*.a
+%endif
