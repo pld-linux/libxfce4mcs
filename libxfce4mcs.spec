@@ -5,12 +5,12 @@
 Summary:	Multi-channel settings management support for Xfce
 Summary(pl):	Obs³uga zarz±dzania ustawieniami wielokana³owymi dla Xfce
 Name:		libxfce4mcs
-Version:	4.3.99.2
+Version:	4.4.0
 Release:	1
 License:	LGPL v2
 Group:		Libraries
-Source0:        http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	7ee4eab238e773b9dbf3fa1472643f6e
+Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
+# Source0-md5:	224863509b7f546fa1ca198374c424d3
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -22,7 +22,6 @@ BuildRequires:	rpmbuild(macros) >= 1.98
 BuildRequires:	startup-notification-devel >= 0.8
 BuildRequires:	xfce4-dev-tools >= %{version}
 BuildRequires:	xorg-lib-libX11-devel
-Requires:	libxfce4util >= %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -31,12 +30,23 @@ multi-channel settings management support for Xfce.
 %description -l pl
 Obs³uga zarz±dzania ustawieniami wielokana³owymi dla Xfce.
 
+%package apidocs
+Summary:	libxfce4mcs API documentation
+Summary(pl):	Dokumentacja API libxfce4mcs
+Group:		Documentation
+Requires:	gtk-doc-common
+
+%description apidocs
+libxfce4mcs API documentation.
+
+%description apidocs -l pl
+Dokumentacja API libxfce4mcs.
+
 %package devel
 Summary:	Development files for libxfce4mcs libraries
 Summary(pl):	Pliki nag³ówkowe bibliotek libxfce4mcs
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	gtk-doc-common
 Requires:	libxfce4util-devel >= %{version}
 Requires:	startup-notification-devel >= 0.8
 Requires:	xorg-lib-libX11-devel
@@ -69,6 +79,7 @@ Statyczne biblioteki libxfce4mcs.
 %{__automake}
 %{__autoconf}
 %configure \
+	--enable-gtkdoc \
 	--with-html-dir=%{_gtkdocdir} \
 	--%{?with_static_libs:en}%{!?with_static_libs:dis}able-static
 %{__make}
@@ -88,7 +99,11 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%attr(755,root,root) %{_libdir}/lib*.so.*.*
+%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
+
+%files apidocs
+%defattr(644,root,root,755)
+%{_gtkdocdir}/%{name}
 
 %files devel
 %defattr(644,root,root,755)
@@ -96,7 +111,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/lib*.la
 %{_includedir}/xfce4/libxfce4mcs
 %{_pkgconfigdir}/*.pc
-#%{_gtkdocdir}/libxfce4mcs
 
 %if %{with static_libs}
 %files static
