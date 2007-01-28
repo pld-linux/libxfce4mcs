@@ -12,6 +12,7 @@ Group:		Libraries
 Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
 # Source0-md5:	224863509b7f546fa1ca198374c424d3
 URL:		http://www.xfce.org/
+BuildRequires:	XFree86-devel
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	gtk-doc-automake
@@ -21,7 +22,6 @@ BuildRequires:	pkgconfig >= 1:0.9.0
 BuildRequires:	rpmbuild(macros) >= 1.98
 BuildRequires:	startup-notification-devel >= 0.8
 BuildRequires:	xfce4-dev-tools >= %{version}
-BuildRequires:	xorg-lib-libX11-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -47,9 +47,9 @@ Summary:	Development files for libxfce4mcs libraries
 Summary(pl):	Pliki nag³ówkowe bibliotek libxfce4mcs
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	XFree86-devel
 Requires:	libxfce4util-devel >= %{version}
 Requires:	startup-notification-devel >= 0.8
-Requires:	xorg-lib-libX11-devel
 
 %description devel
 Development files for the libxfce4mcs libraries.
