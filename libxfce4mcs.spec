@@ -3,7 +3,7 @@
 %bcond_without	static_libs	# don't build static library
 #
 Summary:	Multi-channel settings management support for Xfce
-Summary(pl):	Obs≥uga zarz±dzania ustawieniami wielokana≥owymi dla Xfce
+Summary(pl.UTF-8):   Obs≈Çuga zarzƒÖdzania ustawieniami wielokana≈Çowymi dla Xfce
 Name:		libxfce4mcs
 Version:	4.4.0
 Release:	1
@@ -27,24 +27,24 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 multi-channel settings management support for Xfce.
 
-%description -l pl
-Obs≥uga zarz±dzania ustawieniami wielokana≥owymi dla Xfce.
+%description -l pl.UTF-8
+Obs≈Çuga zarzƒÖdzania ustawieniami wielokana≈Çowymi dla Xfce.
 
 %package apidocs
 Summary:	libxfce4mcs API documentation
-Summary(pl):	Dokumentacja API libxfce4mcs
+Summary(pl.UTF-8):   Dokumentacja API libxfce4mcs
 Group:		Documentation
 Requires:	gtk-doc-common
 
 %description apidocs
 libxfce4mcs API documentation.
 
-%description apidocs -l pl
+%description apidocs -l pl.UTF-8
 Dokumentacja API libxfce4mcs.
 
 %package devel
 Summary:	Development files for libxfce4mcs libraries
-Summary(pl):	Pliki nag≥Ûwkowe bibliotek libxfce4mcs
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe bibliotek libxfce4mcs
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libxfce4util-devel >= %{version}
@@ -54,19 +54,19 @@ Requires:	xorg-lib-libX11-devel
 %description devel
 Development files for the libxfce4mcs libraries.
 
-%description devel -l pl
-Pliki nag≥Ûwkowe bibliotek libxfce4mcs.
+%description devel -l pl.UTF-8
+Pliki nag≈Ç√≥wkowe bibliotek libxfce4mcs.
 
 %package static
 Summary:	Static libxfce4mcs libraries
-Summary(pl):	Statyczne biblioteki libxfce4mcs
+Summary(pl.UTF-8):   Statyczne biblioteki libxfce4mcs
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static libxfce4mcs libraries.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczne biblioteki libxfce4mcs.
 
 %prep
