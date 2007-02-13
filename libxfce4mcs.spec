@@ -3,7 +3,7 @@
 %bcond_without	static_libs	# don't build static library
 #
 Summary:	Multi-channel settings management support for Xfce
-Summary(pl.UTF-8):   Obsługa zarządzania ustawieniami wielokanałowymi dla Xfce
+Summary(pl.UTF-8):	Obsługa zarządzania ustawieniami wielokanałowymi dla Xfce
 Name:		libxfce4mcs
 Version:	4.4.0
 Release:	1
@@ -32,7 +32,7 @@ Obsługa zarządzania ustawieniami wielokanałowymi dla Xfce.
 
 %package apidocs
 Summary:	libxfce4mcs API documentation
-Summary(pl.UTF-8):   Dokumentacja API libxfce4mcs
+Summary(pl.UTF-8):	Dokumentacja API libxfce4mcs
 Group:		Documentation
 Requires:	gtk-doc-common
 
@@ -44,7 +44,7 @@ Dokumentacja API libxfce4mcs.
 
 %package devel
 Summary:	Development files for libxfce4mcs libraries
-Summary(pl.UTF-8):   Pliki nagłówkowe bibliotek libxfce4mcs
+Summary(pl.UTF-8):	Pliki nagłówkowe bibliotek libxfce4mcs
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libxfce4util-devel >= %{version}
@@ -59,7 +59,7 @@ Pliki nagłówkowe bibliotek libxfce4mcs.
 
 %package static
 Summary:	Static libxfce4mcs libraries
-Summary(pl.UTF-8):   Statyczne biblioteki libxfce4mcs
+Summary(pl.UTF-8):	Statyczne biblioteki libxfce4mcs
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
