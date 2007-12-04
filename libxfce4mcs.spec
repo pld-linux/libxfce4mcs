@@ -5,12 +5,12 @@
 Summary:	Multi-channel settings management support for Xfce
 Summary(pl.UTF-8):	Obsługa zarządzania ustawieniami wielokanałowymi dla Xfce
 Name:		libxfce4mcs
-Version:	4.4.1
-Release:	2
+Version:	4.4.2
+Release:	1
 License:	LGPL v2
 Group:		Libraries
 Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	53c0deabf356d39779e6c6a2d5cbdd62
+# Source0-md5:	5ffe66a3eeb884839806ce929e5d2776
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -20,7 +20,7 @@ BuildRequires:	libxfce4util-devel >= %{version}
 BuildRequires:	pkgconfig >= 1:0.9.0
 BuildRequires:	rpmbuild(macros) >= 1.98
 BuildRequires:	startup-notification-devel >= 0.8
-BuildRequires:	xfce4-dev-tools >= 4.4.0
+BuildRequires:	xfce4-dev-tools >= 4.4.0.1
 BuildRequires:	xorg-lib-libX11-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -99,7 +99,8 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
+%attr(755,root,root) %{_libdir}/libxfce4mcs-client.so.*.*.*
+%attr(755,root,root) %{_libdir}/libxfce4mcs-manager.so.*.*.*
 
 %files apidocs
 %defattr(644,root,root,755)
@@ -107,13 +108,16 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
+%attr(755,root,root) %{_libdir}/libxfce4mcs-client.so
+%attr(755,root,root) %{_libdir}/libxfce4mcs-manager.so
+%{_libdir}/libxfce4mcs-client.la
+%{_libdir}/libxfce4mcs-manager.la
 %{_includedir}/xfce4/libxfce4mcs
 %{_pkgconfigdir}/*.pc
 
 %if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libxfce4mcs-client.a
+%{_libdir}/libxfce4mcs-manager.a
 %endif
